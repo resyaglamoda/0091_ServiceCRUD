@@ -30,4 +30,10 @@ app.get('/', (req, res) => {
     .then(result => {
       res.send(result.rows);
     })
+ .catch(err => {
+      console.error(err);
+      res.status(500).send('Internal Server Error');
+    });
+});
+
 
